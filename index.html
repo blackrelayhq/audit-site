@@ -1,11 +1,423 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Black Relay | Fixed-Price Website Audits</title>
-<style>body{font-family:system-ui,sans-serif;margin:0;color:#111;line-height:1.5}header{background:#111;color:#fff;padding:60px 20px;text-align:center}
-.wrap{max-width:960px;margin:auto;padding:40px 20px}.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.t{border:1px solid #ddd;border-radius:10px;padding:24px}.p{font-size:2em;font-weight:700}a.b{display:inline-block;background:#0a7;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none}</style></head>
-<body><header><h1>Your website is losing you customers. We'll show you where.</h1><p>Fixed-price audits of UX, SEO, speed, security and AI-search visibility, delivered as a clear PDF action plan.</p></header>
-<div class="wrap"><div class="tiers">
-<div class="t"><h2>Quick Scan</h2><div class="p">€149</div><p>3 days. Homepage + 3 pages, top-10 fix list.</p><a class="b" href="mailto:esa@mail.grokbot.com?subject=Audit%20order">Order by email</a><p style="font-size:.9em;margin-top:14px"><b>Pay with USDC (Base):</b> send exactly <b>149 USDC</b> on the Base network to<br><code style="word-break:break-all">0xB9b8DB804D918Bd325822989c76D71347536489a</code><br>then email the tx hash and your URL to <a href="mailto:esa@mail.grokbot.com">esa@mail.grokbot.com</a>.</p></div>
-<div class="t"><h2>Full Audit</h2><div class="p">€390</div><p>5 days. Up to 25 pages, full report + video walkthrough.</p><a class="b" href="mailto:esa@mail.grokbot.com?subject=Audit%20order">Order by email</a><p style="font-size:.9em;margin-top:14px"><b>Pay with USDC (Base):</b> send exactly <b>390 USDC</b> on the Base network to<br><code style="word-break:break-all">0xB9b8DB804D918Bd325822989c76D71347536489a</code><br>then email the tx hash and your URL to <a href="mailto:esa@mail.grokbot.com">esa@mail.grokbot.com</a>.</p></div>
-<div class="t"><h2>Audit + Benchmark</h2><div class="p">€790</div><p>7 days. Plus 3 competitors, GDPR check, 60-day plan, re-check.</p><a class="b" href="mailto:esa@mail.grokbot.com?subject=Audit%20order">Order by email</a><p style="font-size:.9em;margin-top:14px"><b>Pay with USDC (Base):</b> send exactly <b>790 USDC</b> on the Base network to<br><code style="word-break:break-all">0xB9b8DB804D918Bd325822989c76D71347536489a</code><br>then email the tx hash and your URL to <a href="mailto:esa@mail.grokbot.com">esa@mail.grokbot.com</a>.</p></div>
-</div><h2>How it works</h2><ol><li>Reply by email with your URL and tier. We invoice you.</li><li>Pay by invoice or USDC (Base) to <code>0xB9b8DB804D918Bd325822989c76D71347536489a</code>.</li><li>We audit.</li><li>You get a prioritized PDF.</li></ol><p>Questions: <a href="mailto:esa@mail.grokbot.com">esa@mail.grokbot.com</a></p></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Relay — Web3 Site Audits: UX, SEO, Speed &amp; Security for dApps</title>
+<meta name="description" content="Fixed-price website &amp; dApp front-end audits for crypto and Web3 teams: wallet-flow UX, SEO &amp; AI-search visibility, Core Web Vitals, security headers, trust signals. Free 3-finding preview.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0e13">
+<link rel="canonical" href="https://blackrelayhq.github.io/audit-site/">
+<meta property="og:title" content="Black Relay — Web3 Site Audits">
+<meta property="og:description" content="Website &amp; dApp front-end audits for Web3 teams: wallet-flow UX, SEO &amp; AI-search visibility, speed, security headers, trust signals. Pay in USDC. Free 3-finding preview.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blackrelayhq.github.io/audit-site/">
+<meta property="og:site_name" content="Black Relay">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Black Relay","description":"Website and dApp front-end audits for Web3 teams: UX, SEO and AI-search visibility, performance, security hygiene and trust signals.","email":"esa@mail.grokbot.com","url":"https://blackrelayhq.github.io/audit-site/","priceRange":"149–790 USDC"}
+</script>
+<style>
+:root{
+  --bg:#0a0e13;
+  --bg-2:#0d131a;
+  --surface:#121a24;
+  --surface-2:#16202c;
+  --border:#1e2a38;
+  --border-strong:#2a3a4d;
+  --text:#e8eef5;
+  --muted:#9aa9b8;
+  --accent:#3ce6a6;
+  --accent-dim:#2bbf8a;
+  --accent-ink:#05261a;
+  --radius:14px;
+  --max:1140px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-ink);padding:10px 16px;font-weight:700;z-index:99;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:10;background:rgba(10,14,19,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.header-row{display:flex;align-items:center;gap:20px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;color:var(--text);text-decoration:none;font-size:1.05rem}
+.brand svg{flex:none}
+.brand span{white-space:nowrap}
+.brand small{display:block;font-size:.66rem;font-weight:600;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;line-height:1.1}
+.site-nav{margin-left:auto;display:flex;align-items:center;gap:22px}
+.site-nav a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500}
+.site-nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent);color:var(--accent-ink)!important;font-weight:700;padding:8px 14px;border-radius:8px}
+.nav-cta:hover{background:var(--accent-dim);color:var(--accent-ink)}
+@media (max-width:760px){
+  .site-nav .nav-links{display:none}
+  .header-row{min-height:54px}
+}
+
+/* Hero */
+.hero{position:relative;padding:84px 0 72px;border-bottom:1px solid var(--border);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 300px at 15% 0%,rgba(60,230,166,.13),transparent 70%),
+  radial-gradient(500px 280px at 90% 10%,rgba(56,130,246,.08),transparent 70%);
+  pointer-events:none}
+.hero-inner{position:relative;max-width:820px}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(60,230,166,.35);background:rgba(60,230,166,.07);padding:5px 12px;border-radius:999px;margin-bottom:22px}
+h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 18px}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--muted);max-width:640px;margin:0 0 30px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:700;text-decoration:none;font-size:1rem;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-dim)}
+.btn-ghost{border-color:var(--border-strong);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-note{margin-top:22px;font-size:.88rem;color:var(--muted)}
+.hero-note strong{color:var(--text)}
+
+/* Sections */
+section{padding:72px 0;scroll-margin-top:70px}
+.alt{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+h2{font-size:clamp(1.5rem,3vw,2.05rem);letter-spacing:-.015em;margin:0 0 10px;line-height:1.2}
+.section-lede{color:var(--muted);max-width:620px;margin:0 0 40px}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;transition:border-color .2s}
+.card:hover{border-color:var(--border-strong)}
+.card h3{margin:16px 0 8px;font-size:1.08rem}
+.card p{margin:0;color:var(--muted);font-size:.94rem}
+.icon{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:rgba(60,230,166,.1);color:var(--accent)}
+.icon svg{width:22px;height:22px}
+
+/* Samples */
+.samples-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px}
+#samples{margin:0;padding-left:22px}
+#samples li{margin:8px 0}
+#samples a{color:var(--accent)}
+
+/* Pricing */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:stretch}
+.tier{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column}
+.tier.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(60,230,166,.07),var(--surface) 45%)}
+.badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.tier h3{margin:0 0 4px;font-size:1.15rem}
+.tier .price{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;margin:10px 0 2px}
+.tier .price small{font-size:.95rem;font-weight:600;color:var(--muted)}
+.tier .scope{font-size:.85rem;color:var(--muted);margin:0 0 18px}
+.tier ul{margin:0 0 24px;padding:0;list-style:none;flex:1}
+.tier ul li{padding:6px 0 6px 26px;position:relative;color:var(--muted);font-size:.93rem;border-bottom:1px dashed var(--border)}
+.tier ul li:last-child{border-bottom:none}
+.tier ul li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:800}
+.tier .btn{text-align:center}
+
+/* Payment */
+.payment-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:18px}
+@media (max-width:860px){.payment-grid{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+.panel h3{margin:0 0 14px;font-size:1.08rem}
+.steps{margin:0;padding-left:20px;color:var(--muted);font-size:.95rem}
+.steps li{margin:9px 0}
+.steps strong{color:var(--text)}
+.addr-label{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.addr-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.addr{flex:1;min-width:220px;background:var(--bg);border:1px solid var(--border-strong);border-radius:10px;padding:12px 14px;font-size:.92rem;word-break:break-all;color:var(--text)}
+.copy-btn{background:var(--surface-2);border:1px solid var(--border-strong);color:var(--text);border-radius:10px;padding:12px 18px;font-weight:700;font-size:.9rem;cursor:pointer;white-space:nowrap}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn[aria-live]{speak-as:spell-out}
+.networks{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 14px}
+.chip{font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:999px;border:1px solid var(--border-strong);color:var(--muted)}
+.chip.pref{border-color:rgba(60,230,166,.5);color:var(--accent);background:rgba(60,230,166,.08)}
+.pay-notes{margin:0;padding-left:20px;color:var(--muted);font-size:.9rem}
+.pay-notes li{margin:6px 0}
+.guarantee{border:1px solid rgba(60,230,166,.4);background:rgba(60,230,166,.07);border-radius:var(--radius);padding:20px 22px;margin-top:18px;display:flex;gap:14px;align-items:flex-start}
+.guarantee svg{flex:none;color:var(--accent);margin-top:2px}
+.guarantee p{margin:0;font-size:.94rem;color:var(--muted)}
+.guarantee strong{color:var(--text)}
+.security-note{border:1px solid var(--border-strong);background:var(--bg);border-radius:var(--radius);padding:20px 22px;margin-top:18px;font-size:.94rem;color:var(--muted)}
+.security-note strong{color:var(--text)}
+
+/* FAQ */
+.faq{max-width:760px}
+.faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq summary{cursor:pointer;padding:18px 22px;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.3rem;color:var(--accent);font-weight:400;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0;padding:0 22px 18px;color:var(--muted);font-size:.95rem}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);background:var(--bg-2);padding:44px 0 36px}
+.footer-row{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+.footer-row p{margin:6px 0 0;color:var(--muted);font-size:.9rem;max-width:420px}
+.footer-contact a{font-weight:700}
+.footer-bottom{margin-top:32px;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--muted);font-size:.84rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Black Relay — home">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3ce6a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+      <span>Black Relay<small>Web3 Site Audits</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <span class="nav-links" style="display:flex;gap:22px">
+        <a href="#checks">What we check</a>
+        <a href="#samples-section">Samples</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </span>
+      <a class="nav-cta" href="mailto:esa@mail.grokbot.com?subject=Free%20preview">Free preview</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- Hero -->
+<section class="hero" id="top" style="padding-left:0;padding-right:0">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Fixed-price audits for Web3 teams</p>
+    <h1>Your dApp's front end is where users decide. <em>We find what's costing you.</em></h1>
+    <p class="lede">Black Relay audits websites and dApp front-ends for token projects, DeFi apps, NFT collections and wallets — the connect-wallet entry point, CTA clarity, SEO &amp; AI-search visibility, Core Web Vitals, security headers and trust signals. Clear, prioritized findings with annotated screenshots.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:esa@mail.grokbot.com?subject=Free%20preview">Get a free 3-finding preview</a>
+      <a class="btn btn-ghost" href="#pricing">See pricing</a>
+    </div>
+    <p class="hero-note"><strong>No private keys. No seed phrases. No admin access.</strong> Email only — no DMs, ever.</p>
+  </div>
+</section>
+
+<!-- What we check -->
+<section id="checks" class="alt">
+  <div class="wrap">
+    <h2>What we check</h2>
+    <p class="section-lede">Five areas that decide whether a visitor connects a wallet, trusts your project — or bounces.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7 17 2.5-7.5L21 11z"/></svg></div>
+        <h3>UX &amp; conversion</h3>
+        <p>Connect-wallet entry point, CTA clarity, mobile layout, and what a first-time visitor sees above the fold.</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>SEO &amp; AI-search visibility</h3>
+        <p>Titles, meta descriptions, canonical, sitemap/robots, structured data, and machine-readability for AI answer engines (crawlable text, llms.txt).</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><path d="M12 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg></div>
+        <h3>Speed &amp; Core Web Vitals</h3>
+        <p>LCP, CLS and blocking time from Lighthouse lab runs, page weight and unused JavaScript — because slow front-ends read as risky front-ends.</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Security headers &amp; web hygiene</h3>
+        <p>HSTS, CSP, clickjacking protection, nosniff, referrer policy, mixed content and <code>security.txt</code> — checked passively from the public response headers.</p>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg></div>
+        <h3>Trust signals</h3>
+        <p>Team visibility, links to contract audits, docs, contact paths and link hygiene — the difference between "credible" and "looks like a rug".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Samples -->
+<section id="samples-section">
+  <div class="wrap">
+    <h2>Sample audits</h2>
+    <p class="section-lede">Public sample audits of real crypto sites, made only from what any visitor can see. Not client work, and not endorsed by these projects. This is the format and depth you get.</p>
+    <div class="samples-box">
+      <ul id="samples">
+        <li><a href="samples/divi/">Sample audit: Divi Project (diviproject.org)</a></li>
+        <li><a href="samples/brica/">Sample audit: Brica Capital (bricacapital.com)</a></li>
+        <li><a href="samples/bitcastle/">Sample audit: bitcastle Exchange (bitcastle.io)</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="alt">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="section-lede">Fixed prices in USDC. No hourly billing, no surprises. Everything is handled by email.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Quick Scan</h3>
+        <p class="price">149 <small>USDC</small></p>
+        <p class="scope">Homepage + 3 pages</p>
+        <ul>
+          <li>Lighthouse scores (performance, accessibility, SEO)</li>
+          <li>Security-header &amp; SEO/AI-search checks</li>
+          <li>Annotated screenshots marking each issue on your pages</li>
+          <li>Top 10 fixes, ranked by impact</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:esa@mail.grokbot.com?subject=Quick%20Scan%20%E2%80%94%20149%20USDC">Order Quick Scan</a>
+      </div>
+      <div class="tier featured">
+        <p class="badge">Most popular</p>
+        <h3>Full Audit</h3>
+        <p class="price">390 <small>USDC</small></p>
+        <p class="scope">Site + dApp front-end, up to 10 pages</p>
+        <ul>
+          <li>Everything in Quick Scan, desktop + mobile</li>
+          <li>UX/conversion &amp; trust-signal review</li>
+          <li>Annotated screenshots marking each issue on your pages</li>
+          <li>Prioritized written report with raw Lighthouse files</li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:esa@mail.grokbot.com?subject=Full%20Audit%20%E2%80%94%20390%20USDC">Order Full Audit</a>
+      </div>
+      <div class="tier">
+        <h3>Audit + Fix Plan</h3>
+        <p class="price">790 <small>USDC</small></p>
+        <p class="scope">Full Audit + ready-to-use fixes</p>
+        <ul>
+          <li>Everything in the Full Audit</li>
+          <li>Implementation tickets for your devs</li>
+          <li>Copy-paste config/code snippets (headers, meta tags, robots/sitemap)</li>
+          <li>Follow-up questions answered by email</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:esa@mail.grokbot.com?subject=Audit%20%2B%20Fix%20Plan%20%E2%80%94%20790%20USDC">Order Audit + Fix Plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment -->
+<section id="payment">
+  <div class="wrap">
+    <h2>Payment</h2>
+    <p class="section-lede">Simple and on-chain: pick a tier, send USDC, email the tx hash. That's the whole process.</p>
+    <div class="payment-grid">
+      <div class="panel">
+        <h3>How to order</h3>
+        <ol class="steps">
+          <li><strong>Email us</strong> your URL and the tier you want (or reply to your free preview).</li>
+          <li><strong>Send the exact amount in USDC</strong> to the address on the right — Base is preferred; Ethereum and Arbitrum work too (same EVM address).</li>
+          <li><strong>Email the tx hash</strong> to <a href="mailto:esa@mail.grokbot.com">esa@mail.grokbot.com</a>. We start as soon as it lands.</li>
+        </ol>
+        <div class="guarantee">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 2.4 3.3-.5.5 3.3L21 12l-2.8 2.4.5 3.3-3.3.5L12 21l-2.4-2.4-3.3.5-.5-3.3L3 12l2.8-2.4-.5-3.3 3.3-.5z"/><path d="M9 12l2 2 4-4"/></svg>
+          <p><strong>Money-back guarantee:</strong> if your report contains no actionable findings, you get a full refund. No fine print.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <p class="addr-label">USDC payment address</p>
+        <div class="addr-row">
+          <code class="addr" id="payaddr">0xB9b8DB804D918Bd325822989c76D71347536489a</code>
+          <button class="copy-btn" id="copyBtn" type="button" aria-live="polite">Copy address</button>
+        </div>
+        <div class="networks" aria-label="Accepted networks">
+          <span class="chip pref">Base — preferred</span>
+          <span class="chip">Ethereum</span>
+          <span class="chip">Arbitrum</span>
+        </div>
+        <ul class="pay-notes">
+          <li><strong>USDC only.</strong> Please don't send other tokens — they can't be processed.</li>
+          <li>Same EVM address on all three networks.</li>
+          <li>Double-check the address in your wallet before confirming.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="security-note">
+      <strong>Security note:</strong> Black Relay will <strong>never</strong> ask for your private keys, seed phrases, or admin access to your site, servers, or contracts. We don't do DMs — <strong>email only</strong>. Anyone messaging you on Telegram, Discord, or X claiming to run this audit is not us.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <p class="section-lede">The questions we get most, answered straight.</p>
+    <div class="faq">
+      <details>
+        <summary>Do you need access to our code, wallet, or servers?</summary>
+        <p>No. Everything in the audit is done from the outside, the same way a real visitor — or attacker — sees your site. We never ask for private keys, seed phrases, or admin access. Fixes in the Audit + Fix Plan are written from what we can see publicly; no repo access needed.</p>
+      </details>
+      <details>
+        <summary>What's in the free 3-finding preview?</summary>
+        <p>Email us your URL and we'll send back three real findings from your site — usually the highest-impact ones. It's free, involves no payment, and lets you judge our quality before committing to a paid tier.</p>
+      </details>
+      <details>
+        <summary>Which tier should I pick?</summary>
+        <p>Quick Scan if your homepage and a few key pages matter most. Full Audit if you want up to 10 pages of your site and dApp front-end covered across all five areas. Audit + Fix Plan if your team also wants copy-paste fixes (headers, meta tags, robots/sitemap) and follow-up answers by email.</p>
+      </details>
+      <details>
+        <summary>How does payment and the refund work?</summary>
+        <p>You pay in USDC to our address — Base preferred, Ethereum or Arbitrum also fine — then email us the tx hash. If the finished report contains no actionable findings, we refund the full amount. Simple as that.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:6px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3ce6a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <span>Black Relay<small>Web3 Site Audits</small></span>
+        </a>
+        <p>Fixed-price website and dApp front-end audits for crypto and Web3 teams. No private keys, no admin access, no DMs — email only.</p>
+      </div>
+      <div class="footer-contact">
+        <p class="addr-label" style="margin-bottom:6px">Contact</p>
+        <p><a href="mailto:esa@mail.grokbot.com">esa@mail.grokbot.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Black Relay. All rights reserved.</span>
+      <span>Paid in USDC · Base, Ethereum, or Arbitrum</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ADDR="0xB9b8DB804D918Bd325822989c76D71347536489a";
+  var btn=document.getElementById("copyBtn");
+  function fallback(){
+    try{
+      var t=document.createElement("textarea");
+      t.value=ADDR;t.setAttribute("readonly","");
+      t.style.position="fixed";t.style.opacity="0";
+      document.body.appendChild(t);t.select();
+      var ok=document.execCommand("copy");
+      document.body.removeChild(t);
+      return ok;
+    }catch(e){return false}
+  }
+  function done(ok){
+    btn.textContent=ok?"Copied ✓":"Copy failed — select manually";
+    setTimeout(function(){btn.textContent="Copy address"},2200);
+  }
+  btn.addEventListener("click",function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ADDR).then(function(){done(true)},function(){done(fallback())});
+    }else{
+      done(fallback());
+    }
+  });
+})();
+</script>
+</body>
+</html>
